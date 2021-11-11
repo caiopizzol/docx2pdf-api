@@ -12,6 +12,7 @@ This is how this repo is structured
 │       ├── example1.docx
 │       ├── example2.docx
 │       ├── example3.docx
+|   ├── requirements.txt
 │   ├── run.py
 ├── server  <-- OpenAPI server folder        
 │   ├── openapi_server
@@ -20,11 +21,10 @@ This is how this repo is structured
 │       ├── common
 │       ├── controllers
 │       ├── models
-│       ├── openapi
-│       ├── requirements.txt
+│       ├── openapi     <-- OpenAPI configuration .yaml file 
 │       ├── test
 │   ├── Dockerfile
-└── readme.md
+└── README.md
 ```
 
 ## Requirements
@@ -63,19 +63,21 @@ After that you should see the following message on terminal:
 
 There are several ways to use the API service that are detailed below:
 
-### 1. Demo Script
-
-For easier usage, just access the `<demo>` folder and execute the run.py script. It is recommended to create a virtual environment before installing the requirements.
+First create a the virtual environment
 
 - Creating VirtualEnv:
 ```
-cd demo
 python3 -m virtualenv .venv
 source .venv/bin/activate
 ```
 
-- Installing requirements:
+### 1. Demo Script
+
+For easier usage, just access the `<demo>` folder and execute the run.py script. It is recommended to create a virtual environment before installing the requirements.
+
+- Accessing folder and installing requirements:
 ```
+cd demo
 pip install -r requirements.txt
 ```
 
@@ -86,9 +88,9 @@ python run.py
 
 All converted files should be found on examples folder with same name as the origin file but with the .pdf extension
 
-### 2. Swagger UI
+### 2. Swagger UI / Documentation
 
-It is also possible to simulate the API service through the Swagger UI. 
+Together with the API documentation, it is also possible to simulate the API service through Swagger UI. 
 
 - Open your browser and access the url:
 
@@ -133,15 +135,17 @@ curl -X 'POST' \
 
 ## Testing
 
+**must have `<libreoffice>` installed** ```brew install --cask libreoffice```
+
 For integration tests you should access the `<test>` folder inside the `<openapi_server>`:
 
 ```
 cd server/openapi-server/test
 ```
 
-- Reactivate the created VirtualEnv:
+- Reactivate the created VirtualEnv (in case you deactivated it):
 ```
-source .venv/bin/activate
+source ../../../.venv/bin/activate
 ```
 
 - Install tox lib and execute it:
