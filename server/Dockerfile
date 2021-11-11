@@ -7,7 +7,7 @@ RUN apt-get install -y libreoffice
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 
-COPY /openapi_server/requirements.txt /usr/src/app/
+COPY /openapi_server/test/requirements.txt /usr/src/app/
 
 RUN pip3 install --no-cache-dir -r requirements.txt
 
