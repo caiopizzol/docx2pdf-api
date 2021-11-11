@@ -25,20 +25,21 @@ This is how this repo is structured
 │       ├── test
 │   ├── Dockerfile
 └── readme.md
-
-## Requirements
 ```
 
-To locally run the OpenAPI server you should have installed at least `<Docker>` and `<Python3>` with pip and virtualenv libs.
+## Requirements
+
+To locally run the OpenAPI server you should have installed at least `<Docker>` and `<Python3>` with `<pip>` and `<virtualenv>` libs.
 
 Make sure to run this project on a `<Linux>` or `<Mac>` environment.
 
 ## Installation
 
-To have the server up and running you should first cd the `<server>` folder and run following commands:
+To have the server up and running you should first access the `<server>` folder and run following commands:
 
 - Build Docker image:
 ```
+cd server
 docker build -t docx2pdf .
 ```
 
@@ -62,7 +63,7 @@ After that you should see the following message on terminal:
 
 There are several ways to use the API service that are detailed below:
 
-### Demo Script
+### 1. Demo Script
 
 For easier usage, just access the `<demo>` folder and execute the run.py script. It is recommended to create a virtual environment before installing the requirements.
 
@@ -85,7 +86,7 @@ python run.py
 
 All converted files should be found on examples folder with same name as the origin file but with the .pdf extension
 
-### Swagger UI
+### 2. Swagger UI
 
 It is also possible to simulate the API service through the Swagger UI. 
 
@@ -96,25 +97,28 @@ http://localhost:8080/v1/ui/
 ```
 
 You should see something like this:
+
 <img src="https://i.imgur.com/00nYbd0.png" alt="exemplo imagem">
 
 - Authenticate using the provided API key:
 ```baa1db04-f87c-4b5c-92da-3e39b8e3d1b0```
 
-Click the **Authorize** button and insert the key:
+- Click the **Authorize** button and insert the key:
+
 <img src="https://i.imgur.com/adIsZ1o.png" alt="exemplo imagem">
 
 - Open the /file/convert method and press the **Try it out** button:
+
 <img src="https://i.imgur.com/0DfxRuj.png" alt="exemplo imagem">
 
-Just click **Execute** to the convert base64 docx example provided or change the *fileBase64* payload key.
+- Click **Execute** to the convert base64 docx example provided or change the *fileBase64* payload key.
+
 <img src="https://i.imgur.com/8UCRlyK.png" alt="exemplo imagem">
 
-### cURL
+### 3. cURL
 
-Last but not least, you can also cURL the API endpoint for docx2pdf conversion.
+Last but not least, you can also cURL the API endpoint for docx2pdf conversion. To do so, just run the following code on your terminal:
 
-To do so, just run the following code on your terminal:
 ```
 curl -X 'POST' \
   'http://localhost:8080/v1/file/convert' \
@@ -129,7 +133,7 @@ curl -X 'POST' \
 
 ## Testing
 
-Lastly, for integration tests you should access the `<test>` folder inside the `<openapi_server>`:
+For integration tests you should access the `<test>` folder inside the `<openapi_server>`:
 
 ```
 cd server/openapi-server/test
