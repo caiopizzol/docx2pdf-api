@@ -73,7 +73,7 @@ source .venv/bin/activate
 
 ### 1. Demo Script
 
-For easier usage, just access the `<demo>` folder and execute the run.py script. It is recommended to create a virtual environment before installing the requirements.
+For easier usage, just access the `<demo>` folder and execute the run.py script (make sure to have the created virtualenv activated).
 
 - Accessing folder and installing requirements:
 ```
